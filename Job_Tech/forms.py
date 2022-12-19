@@ -32,16 +32,3 @@ class StudentJobForm(forms.ModelForm):
     class Meta:
         model = StudentJobs
         fields = ['title', 'desc', 'company', 'location']
-        labels = {
-            'title': 'Ttile',
-            'desc': 'Desc',
-            'company': 'Company',
-            'location': 'Location'
-
-        }
-        widgets = {
-            'title': forms.TextInput(attrs={'class': 'form-control'}),
-            'desc': forms.TextInput(attrs={'class': 'form-control'}),
-            'comapny': forms.TextInput(attrs={'class': 'form-control'}),
-            'location': forms.TextInput(attrs={'class': 'form-control'}),
-        }

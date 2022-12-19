@@ -1,15 +1,47 @@
 from django import forms
-from.models import Job
-
+from .models import Job, StudentJobs
 from django.contrib.auth.models import User
-
-
-from django import forms
-from.models import Job
 from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth.models import User
 
-class UserRegistrationForm(UserCreationForm):
-    username = forms.CharField(max_length=30)
-    email = forms.EmailField()
-    password = forms.CharField(widget=forms.PasswordInput)
+
+class CreateUserForm(UserCreationForm):
+    class Meta:
+        model = User
+        fields = ['username', 'email', 'password1', 'password2']
+
+
+class JobForm(forms.ModelForm):
+    class Meta:
+        model = Job
+        fields = ['title', 'desc', 'company']
+        labels = {
+            'title': 'Ttile',
+            'desc': 'Desc',
+            'company': 'Company',
+
+        }
+        widgets = {
+            'title': forms.TextInput(attrs={'class': 'form-control'}),
+            'desc': forms.TextInput(attrs={'class': 'form-control'}),
+            'comapny': forms.TextInput(attrs={'class': 'form-control'}),
+
+        }
+
+
+class StudentJobForm(forms.ModelForm):
+    class Meta:
+        model = StudentJobs
+        fields = ['title', 'desc', 'company', 'location']
+        labels = {
+            'title': 'Ttile',
+            'desc': 'Desc',
+            'company': 'Company',
+            'location': 'Location'
+
+        }
+        widgets = {
+            'title': forms.TextInput(attrs={'class': 'form-control'}),
+            'desc': forms.TextInput(attrs={'class': 'form-control'}),
+            'comapny': forms.TextInput(attrs={'class': 'form-control'}),
+            'location': forms.TextInput(attrs={'class': 'form-control'}),
+        }

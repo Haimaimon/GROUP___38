@@ -1,0 +1,104 @@
+@import url();
+*{
+    margin:0;
+    padding:0;
+}
+body{
+    font-size: 18px;
+    font-family: Georgia,times,serif;
+    background-color: beige;
+    background-image: url("office.jpg")
+}
+h1,h2,h3 {
+    font-family: Halvetica,Arial,sans-serif;
+}
+h2{
+    text-align: center;
+    color: black;
+    background-color: aqua;
+
+}
+#bikoret{
+    text-align: center;
+    color:white;
+    padding: 10px;
+    border: solid 2px grey;
+}
+footer{
+    text-align: center;
+    color:#aaa;
+    font-size:18px;
+}
+#container{
+  width: 760px;
+    margin:0 auto;
+}
+article{
+    background-color:white;
+    padding: 20px;
+    margin: 20px 0;
+    border:solid 1px black;
+}
+article p{
+    margin: 0 0 1em;
+}
+.post-head small{
+    display: block;
+    margin: 10px 0 20px;
+    padding:0 0 20px;
+    border-bottom: solid 2px #eee;
+    color:#00c6a0;
+}
+.post-foot{
+    font-size:16px;
+    border-top: solid 1px#eee;
+    margin: 10px auto;
+    padding: 20px 0 0;
+}
+#top h1{
+    text-align: center;
+    color: slategrey;
+    font-size: 90px;
+    margin:0px auto;
+    border:solid 4px black;
+    background-image: url(tech.jpg);
+
+}
+
+#Fitchers h3{
+    background-image: url(tech.jpg);
+    text-align: center;
+    margin: 30px auto;
+    padding: 10px 0 10px;
+    border: solid 3px black;
+    width:700;
+
+}
+#list {
+    text-align: right;
+    font-size: 1.5em;
+    font-style: italic;
+    padding: 20px;
+    border:solid 3px blue;
+}
+#list li{
+    color: white;
+    margin: 10px 300px;
+    padding: 10px;
+    background-color: darkslategrey;
+
+}
+#list h2{
+    color:whitesmoke;
+}
+
+#myBtn{
+    background-color:darkred;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+}

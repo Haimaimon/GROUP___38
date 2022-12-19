@@ -1,0 +1,125 @@
+{% load static %}
+<html>
+    <head>
+        <title>דף הבית</title>
+        <link rel="stylesheet"  href="{% static 'css/home.css' %}">
+         <img src="{% static 'images/office.jpg' %}">
+    </head>
+    <body>
+
+<br><br><br>
+            <header id="top">
+                <h1>JobTech</h1>
+            </header >
+        <br><br>
+        <section id="Fitchers">
+            <h3><a href="register" >הרשמה</a></h3>
+            <h3><a href="login" >התחברות</a></h3>
+            <h3> <button id="myBtn">מי אנחנו</button></h3>
+            <div id="myModal" class="modal" style="display:none;">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                  <span class="close">&times;</span>
+                      <h1> welcome to JobTech</h1>
+                      <h2> !האתר בו תוכלו למצוא את משרת חייכם </h2><br>
+                      <p>. רוב הסיכויים שמכאן תצאו מסודרים לחיים(סתם צוחקים, טוב נו אולי באמת)
+                          מי אנחנו?
+                          אנחנו היינו בדיוק במקום שלכם עד לפני שנה.
+                          חווינו את המצוקה בשוק העבודה והחלטנו לשים לזה סוף.
+                          האתר מציע מגוון משרות מדן ועד אילת וכל מה שלכם נותר הוא להירשם!
+                          אצלנו הגיוסים לא נעצרים לרגע הם רק מתגברים, בואו לקחת חלק בקדמה אז יאלה למה אתם מחכים? רוצו להרשמה
+                      </p>
+                </div>
+            </div>
+            <h3><a href="studentjob">משרות סטודנט</a></h3><br>
+        </section>
+        <div id="list">
+            <h2>?למה דווקא ג'וב טק</h2>
+            <ul>
+                <li>!.האתר הראשון שבוחן אותך על ידי שאלון מיומנות
+                </li>
+                <li>!.האתר מציע משרות במיוחד לסטודנטים</li>
+                <li>!.האתר מתמקד במשרות אך ורק בתחום ההייטק</li>
+            </ul>
+
+
+
+        </div>
+            <header id="bikoret">
+            <h1>:ביקורת משתמשים</h1>
+            </header>
+            <div id="container">
+                <article>
+                <section class="post-head">
+                    <h2>:רותם גל מספר</h2>
+                    <small>Posted on <time datetime="2022-12-10">Dec 10,2022</time></small>
+                </section>
+                <section class="post-body">
+                    <p>ביקרתי באתר מספר פעמים רב ומאוד התרשמתח מכמות המשרות והסדר שלהן, לשמחתי הצלחתי למצוא עבודה וכעת אני באותה העבודה כשנתיים, ממליץ מאוד על האתר!.</p>
+                </section>
+                <section class="post-foot">
+                <p>Rating 4.5/5 By Rotem gal</p>
+                </section>
+            </article>
+ <article>
+                <section class="post-head">
+                    <h2>:ורוניקה נוביץ' מספרת</h2>
+                    <small>Posted on <time datetime="2022-11-15">Nov 15,2022</time></small>
+                </section>
+                <section class="post-body">
+                    <p>לאחר המון שנים בהוראת תכנות לתלמידי תיכון החלטתי לחזור לקריירת ההיטק שלי, נרשמתי לאתר העלתי תיק עבודות והתחלתי לחפש, נדהמתי מהרעיון של שאלון המיומנויות, לאחר כשבועיים הוזמנתי לראיון במיקרוסופט ולשמחתי התקבלתי!</p>
+                </section>
+                <section class="post-foot">
+                <p>Rating 4.8/5 By Veronika noviz</p>
+                </section>
+            </article>
+                 <article>
+                <section class="post-head">
+                    <h2>:שלמה יצחק מספר</h2>
+                    <small>Posted on <time datetime="2022-12-01">Dec 01,2022</time></small>
+                </section>
+                <section class="post-body">
+                    <p>אני שלמה מתכנת מזה כ 14 שנה, לצערי הרב כחלק מגל הפיטורים הנוכחי פוטרתי מעבודתי בתור מתכנת סניור, והחלטתי להמשיך לפרק חדש בחיים, נרשמתי לאתר פרסמתי את כישוריי ונדהמתי בהרבה עניין מחברות רבות, הגשתי מועמדות למשרה שמאוד עניינה אותי ולשמחתי התקבלתי.</p>
+                </section>
+                <section class="post-foot">
+                <p>Rating 4.4/5 By Shlomo izhak</p>
+                </section>
+            </article>
+        </div><!--close in container-->
+<footer>
+            <p>&copy;2022 &bull; JobTech
+            </p></footer>
+
+
+
+<script>
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the button that opens the modal
+    var btn = document.getElementById("myBtn");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks the button, open the modal
+    btn.onclick = function() {
+      modal.style.display = "block";
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+    </script>
+    </body>
+
+</html>

@@ -26,23 +26,17 @@ from django.shortcuts import render
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login
 
-def register_user(request):
-    return render(request,'register.html')
 
-def regi(request):
+def registerPage(request):
+    form = CreateUserForm()
     if request.method == 'POST':
-        form = UserRegistrationForm(request.POST)
+
+        form = CreateUserForm(request.POST)
         if form.is_valid():
-            username = form.cleaned_data['username']
-            password = form.cleaned_data['password']
-            email = form.cleaned_data['email']
-            user = User.objects.create_user(username, email, password)
-            user.save()
-            authenticated_user = authenticate(username=username, password=password)
-            login(request, authenticated_user)
+            form.save()
+            user = form.cleaned_data.get('username')
+            messages.success(request, 'Account was created for ' + user)
             return redirect('index')
-            # redirect to a success page
-    else:
-        form = UserRegistrationForm()
-    return redirect('index')
-    return render(request, 'register.html', {'form': form})
+
+    context = {'form': form}
+    return render(request, 'register.html', context)

@@ -277,3 +277,4 @@ def portFolio_hr(request):
     'files': files,
   }
   return render(request, 'portfolio_hr.html',context)
+

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
 	<title>Login</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -101,13 +100,26 @@
 							</div>
               {{form.password2}}
 						</div>
+						<div class="input-group mb-2">
+							<div class="input-group-append">
+							<span class="input-group-text"><i class="fas fa-key"></i></span>
+							<!-- Modal - View Student 
+									<select name="cars" id="cars">
+									<option selected disabled> status </option>	
+									<option value="hr">hr</option>
+									<option value="job_seeker">job seeker</option>
+									</select>
+									-->
+							</div>
+              {{form.status}}
+						</div>
 
 				   		<div class="d-flex justify-content-center mt-3 login_container">
 				 			<input class="btn login_btn" type="submit" value="הירשם">
 				   		</div>
 					</form>
 				</div>
-          {{form.errors}}
+           {{form.errors}}
 				<div class="mt-4">
 					<div class="d-flex justify-content-center links">
 						יש לך כבר חשבון? <a href="{% url 'login' %}" class="ml-2">התחבר</a>
@@ -118,8 +130,9 @@
 	</div>
 	<script>
 						/* Because i didnt set placeholder values in forms.py they will be set here using vanilla Javascript
-		//We start indexing at one because CSRF_token is considered and input field
-		 */
+		//We start indexing at one because CSRF_token is considered and input field 
+
+
 
 		//Query All input fields
 		var form_fields = document.getElementsByTagName('input')
@@ -127,11 +140,14 @@
 		form_fields[2].placeholder='Email..';
 		form_fields[3].placeholder='Enter password...';
 		form_fields[4].placeholder='Re-enter Password...';
-
+		form_fields[5].placeholder='status...';
 
 		for (var field in form_fields){
+
 			form_fields[field].className += ' form-control'
 		}
 	</script>
 </body>
 </html>
+
+

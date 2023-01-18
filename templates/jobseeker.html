@@ -1,0 +1,110 @@
+{% extends "main.html" %}
+{% block body %}
+    
+<span><a href="{% url 'logout' %}" class="btn btn-warning">התנתקות</a></span>
+<span class="hello-msg">{{request.user}} , ברוכים הבאים</span>
+<div class="row">
+  <div class="col-12">
+    {% if alljobs %}
+    <div class="card bg-light ms-4 me-4 mb-4">
+      <div class="card-header">
+        <i class="fa-solid fa-list fa-lg"></i> כל המשרות
+      </div>
+      <div class="card-body">
+        <p class="card-text">
+          <div class="table-responsive">
+            <form method="get">
+                {{myFilter.form}}
+                <button class="btn btn-primary" type= "submit">Search</button>
+             </form>
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th scope="col">hr</th>
+                  <th scope="col">title</th>
+                  <th scope="col">desc</th>
+                  <th scope="col">company</th>
+                  <th scope="col">location</th>
+                  <th scope="col">age</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for x in alljobs %}
+                  <tr>
+                    <td>{{ x.hr }}</td>
+                    <td>{{ x.title }}</td>
+                    <td>{{ x.desc}}</td>
+                    <td>{{ x.company}}</td>
+                    <td>{{ x.location}}</td>
+                    <td>{{ x.age}}</td>
+                    
+                    <td>
+                      <button type="button" class="btn btn-success me-1" href="{% url 'view_jobs' x.id %}" data-bs-toggle="modal" data-bs-target="#myModal{{x.id}}">
+                        <i class="fa-solid fa-circle-info fa-lg"></i>
+                      </button>
+      
+
+                      <!-- Modal - View Student -->
+                      <div class="modal" id="myModal{{x.id}}" tabindex="-1" aria-labelledby="myModalLabel1" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title">
+                                Jobs: {{ x.hr }} {{ x.title }} {{ x.desc }} {{ x.company }}  {{ x.location }} {{ x.age }}
+                              </h5>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true"></span>
+                              </button>
+                            </div>
+                            <div class="modal-body">
+                              <ul class="list-unstyled">
+                                <li>hr: <strong>{{ x.hr}}</strong></li>
+                                <li>title: <strong>{{ x.title}}</strong></li>
+                                <li>desc: <strong>{{ x.desc }}</strong></li>
+                                <li>company: <strong>{{ x.company }}</strong></li>
+                                <li>location: <strong>{{ x.location }}</strong></li>
+                                <li>age: <strong>{{ x.age }}</strong></li>
+                                
+                              </ul>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <a class="btn btn-warning me-1" href="{% url 'job_submission' %}">
+                        <i class="fa-solid fa-pen-to-square fa-lg"></i>
+                      </a>
+                      <!-- Modal - Delete Student -->
+                      <div class="modal" id="delete{{x.id}}" tabindex="-1" aria-labelledby="myModalLabel2" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title">
+                                Jobs: {{ x.hr }} {{ x.title }} {{ x.desc }} {{ x.company }} {{ x.location }} {{ x.age }}
+                              </h5>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true"></span>
+                              </button>
+                            </div>
+                            <div class="modal-footer">        
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </p>
+      </div>
+    </div>
+    {% else %}
+      <h5 class="alert alert-primary ms-4 me-4">לא נמצא.</h5>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}

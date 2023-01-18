@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% block body %}
+    
+<span><a href="{% url 'logout' %}" class="btn btn-warning">התנתקות</a></span>
+<span class="hello-msg">{{request.user}} , ברוכים הבאים</span>
+<div class="row">
+  <div class="col-12">
+    <div class="card bg-light ms-4 me-4 mb-4">
+      <div class="card-header">
+        <i class="fa-solid fa-list fa-lg"></i> מחפשי עבודה 
+      </div>
+      <div class="card-body">
+        <p class="card-text">
+          <div class="table-responsive">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th scope="col">name</th>
+                  <th scope="col">phone</th>
+                  <th scope="col">email</th>
+                  <th scope="col">education</th>
+                  <th scope="col">work with initiator</th>
+                  <th scope="col">Portfolio</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for x in allseeker %}
+                  <tr>
+                    <td>{{ x.name }} </td>
+                    <td>{{ x.phone}}</td>
+                    <td>{{ x.email}}</td>
+                    <td>{{ x.education}}</td>
+                    <td>{{ x.wordwithinitiator}}</td> 
+                    <td><a href="{% url 'portfolio_hr' %}" class="btn btn-secondary">תיק עבודות</a></td?
+
+                    <td>
+                      <button type="button" class="btn btn-success me-1" href="{% url 'view_jobs' x.id %}" data-bs-toggle="modal" data-bs-target="#myModal{{x.id}}">
+                        <i class="fa-solid fa-circle-info fa-lg"></i>
+                      </button>
+
+                      <!-- Modal - View Student -->
+                      <div class="modal" id="myModal{{x.id}}" tabindex="-1" aria-labelledby="myModalLabel1" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title">
+                                hr: {{ x.name }} {{ x.phone }} {{ x.email }} {{ x.education }} {{ x.wordwithinitiator }} 
+                              </h5>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true"></span>
+                              </button>
+                            </div>
+                            <div class="modal-body">
+                              <ul class="list-unstyled">
+                                <li>name: <strong>{{ x.name}}</strong></li>
+                                <li>phone: <strong>{{ x.phone }}</strong></li>
+                                <li>email: <strong>{{ x.email }}</strong></li>
+                                <li>education: <strong>{{ x.education }}</strong></li>
+                                <li>work with initiator: <strong>{{ x.wordwithinitiator }}</strong></li>
+                                
+                              </ul>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      </div>
+                    </td>
+                  </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}    

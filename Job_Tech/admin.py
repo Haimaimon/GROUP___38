@@ -1,5 +1,11 @@
 from django.contrib import admin
-from .models import User, Job
+from .models import StudentJobs,Hr,AllJob,JobSeeker,FileModel
 
-admin.site.register(User)
-admin.site.register(Job)
+
+admin.site.register(StudentJobs)
+admin.site.register(Hr)
+admin.site.register(AllJob)
+admin.site.register(JobSeeker)
+admin.site.register(FileModel)
+
+

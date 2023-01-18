@@ -1,0 +1,35 @@
+{% extends "main.html" %}
+{% block body %}
+<div>
+    <h2 style="color:red;">
+    WELCOME! We are glad you chose us! <br>Please fill out the initial screening questionnaire and send it to the attached recruiter's email!
+    </h2>
+</div>
+<p> 
+    <h3>Question 1:</h3>
+Write a function that converts STRING to INT.<br>
+How to handle a wrong input (EXCEPTION). Go ahead and ask a little about EXCEPTION (what happens if we are not caught by the CATCH).
+<br>
+    <h3>Question 2:</h3>
+Write a definition of NODE of an INT-valued tree. <br>
+Then a recursive function that calculates all the VALUE of the tree. (stop condition should be NODE=NULL and this will save checking conditions of empty branches).
+<br>
+      <h3>Question 3:</h3>
+ A. Given an interface that contains ADD, REMOVE, SIZE. The actual stack class that implements the interface (you need to write the entire definition, including the CLASS STUCK IMPLEMENT ——). You should use the data structure of a list (more efficient than a vector because a vector is realized by an array and adding a member to a full array requires allocating a new array of double size and moving the data there...)
+ <br>
+B. You need to make sure that the stack is synchronized to work with different threads (you need to use SYNCHRONIZE two or three times when using the data structure).
+<br>
+C. Code containing 2 trads and want to know what the output is. Spinach first writes into the fire table, whose key is the first letter of the inputs provided and the value is 1). The second nuisance reads the value from the table, increases it by 1 and writes it back (overwrites the previous value that was in the table). In the end I had an output of 2 or 3 lines.
+<br>
+d. What could be a problem with the code? DEADLOCK (each Tread performs two BLOCKs in two places, but in reverse order).
+<br>
+    <h3>Question 4:</h3>
+A. There is code that contains a function that accepts two integers and a character (which can be +-*/). There is a SWITCH on the character that performs the corresponding arithmetic operation. The question should be solved in an OO way.
+<br>
+B. How can you get rid of SWITCH? Using the hash table: key - character, value - new class().
+<br>
+<br>
+    
+
+</p>    
+{% endblock %}

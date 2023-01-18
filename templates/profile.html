@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block body %}
+
+<form method="post">
+ {% csrf_token %}
+{{ form.as_p }}
+
+<input class="btn btn-primary" type="submit" value="עדכן">
+<a href="{% url 'delete' %}" class="btn btn-danger">מחיקת פרופיל</a>
+ </form>
+                    
+{% endblock %}
